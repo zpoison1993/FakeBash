@@ -12,22 +12,6 @@ export default (props) => {
             <Header />
             {props.children}
         </div>
-        // <div>
-            
-        //     <Header />
-
-        //     <div>
-
-        //         <Switch>
-        //             <Route path="/bins/:binId" component={BinsMain} />
-        //             <Route path="/index" component={BinsList} />
-                
-        //         </Switch>
-
-                
-        //     </div>
-
-            
-        // </div>
+       
     );
 }

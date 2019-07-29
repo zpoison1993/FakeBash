@@ -13,8 +13,6 @@ class BinsComments extends Component {
         if ( !this.props.bin ) {return <div className="spinner-border" role="status">
         <span className="sr-only">Loading...</span>
       </div>}
-        // console.log(this.props.params.binId);
-        // console.log(this.props.bin);
         return(
             <div className="bins-comments-container">
                 

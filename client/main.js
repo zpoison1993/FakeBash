@@ -21,25 +21,6 @@ const routes = (
       <Route path="bins/:binId/comments" component={BinsComments} />
     </Route>
     </Router>
-    // <BrowserRouter>
-    //     <Header />
-
-    //     <div>
-
-    //         <Switch>
-               
-    //          <Route path="/index" component={BinsList} />
-    //          <Route path="/bins/:binId" component={BinsMain} />
-
-    //         </Switch>
-
-            
-    //     </div>
-    //         {/* <Route path="/" component={App} /> */}
-    //         {/* <Route path="/bins" component={BinsMain} /> */}
-        
-        
-    // </BrowserRouter>
 );
 
 Meteor.startup(() => {

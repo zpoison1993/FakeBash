@@ -34,7 +34,6 @@ class BinsCommentsEditor extends Component {
     };
 
     handleLog(comment,ind) {
-        console.log(ind);
         Meteor.call('bins.remove_comment',this.props.bin,comment);
 
     }

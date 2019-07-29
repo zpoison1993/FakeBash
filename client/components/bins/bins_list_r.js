@@ -29,9 +29,6 @@ class BinsListR extends Component {
     };
     onSortBtn(key) {
         console.log(key);
-        // this.props.key = key;
-        
-        // Meteor.call('bins.sortkey',bin,key);
         if(key==='date'){
             // browserHistory.push('/')
             document.location.replace('/')
@@ -90,6 +87,7 @@ class BinsListR extends Component {
         
         return(
            <ul className="list-group">
+               <h2>Welcome to FakeBash.im</h2>
                <div className="btn-container list sort">
                     <h3>Sort By:</h3> 
                     <button onClick={()=> this.onSortBtn('date') }  className=" btn"> Date</button>
@@ -101,12 +99,8 @@ class BinsListR extends Component {
     }
 }
 
-// export const sortMethod = BinsList.prototype.onSortBtn();
-// const sortKey =  BinsList.prototype.onSortBtn('date');
-// console.log(sortKey)
 
 export default createContainer(() => {
-    // console.log(props)
     Meteor.subscribe('bins','rate');
     Meteor.subscribe('sharedBins');
     return { bins: Bins.find().fetch() };
