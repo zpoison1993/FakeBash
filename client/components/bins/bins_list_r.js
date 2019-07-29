@@ -5,7 +5,7 @@ import { Meteor } from 'meteor/meteor';
 import {Link} from 'react-router'
 import { browserHistory} from 'react-router'
 
-class BinsList extends Component {
+class BinsListR extends Component {
 
     onBinRemove(bin) {
         Meteor.call('bins.remove',bin)
@@ -37,8 +37,8 @@ class BinsList extends Component {
             document.location.replace('/')
         }
         else if(key==='rate') {
-             // browserHistory.push('/r')
-             document.location.replace('/r')
+            // browserHistory.push('/r')
+            document.location.replace('/r')
         }
         
         return key
@@ -92,7 +92,7 @@ class BinsList extends Component {
            <ul className="list-group">
                <div className="btn-container list sort">
                     <h3>Sort By:</h3> 
-                    <button onClick={()=> this.onSortBtn('date') }  className=" btn">Date</button>
+                    <button onClick={()=> this.onSortBtn('date') }  className=" btn"> Date</button>
                     <button onClick={()=> this.onSortBtn('rate') }  className=" btn">Rating</button>
                </div>
                {this.renderList()}
@@ -107,7 +107,7 @@ class BinsList extends Component {
 
 export default createContainer(() => {
     // console.log(props)
-    Meteor.subscribe('bins','date');
+    Meteor.subscribe('bins','rate');
     Meteor.subscribe('sharedBins');
     return { bins: Bins.find().fetch() };
-},BinsList)
+},BinsListR)

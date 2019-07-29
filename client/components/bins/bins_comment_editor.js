@@ -20,7 +20,10 @@ class BinsCommentsEditor extends Component {
             return this.props.bin.comments.map((comment,index) => {
                 return  <li ref={index} key = {comment}
                         className="list-group-item comment">
-                        {comment}
+                            <p>{comment}</p>
+                            {/* <div className="pull-left">
+                                {this.props.bin.userId}
+                            </div>   */}
                             <div className="pull-right">
                                 <button onClick={() => this.handleLog(comment,index)} className="btn btn-danger">Remove</button>
                             </div>  

@@ -8,6 +8,7 @@ import App from './components/app';
 import BinsMain from './components/bins/bins_main';
 import BinsComments from './components/bins/bins_comments';
 import BinsList from './components/bins/bins_list';
+import BinsListR from './components/bins/bins_list_r';
 import { Bins } from '../imports/collections/bins';
 
 const routes = (
@@ -15,6 +16,7 @@ const routes = (
     <Router history={browserHistory}>
     <Route path="/" component={App}>
       <IndexRoute component={BinsList} />
+      <Route path="/r" component={BinsListR} />
       <Route path="bins/:binId" component={BinsMain} />
       <Route path="bins/:binId/comments" component={BinsComments} />
     </Route>

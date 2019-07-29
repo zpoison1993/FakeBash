@@ -8,6 +8,8 @@ Meteor.methods({
             content: '',
             likes: 0,
             dislikes: 0,
+            rating: 0,
+            sortkey: '',
             sharedWith: [],
             ownerId: this.userId,
             comments: []
@@ -39,6 +41,12 @@ Meteor.methods({
     },
     'bins.dislike': function (bin) {
         return Bins.update(bin._id, { $inc: {dislikes: 1} });
+    },
+    'bins.rating': function (bin,likes,dislikes) {
+        return Bins.update(bin._id, { $set: {rating: likes-dislikes} });
+    },
+    'bins.sortkey': function (bin,key) {
+        return Bins.update(bin._id, { $set: {sortkey: key} });
     }
     
 
