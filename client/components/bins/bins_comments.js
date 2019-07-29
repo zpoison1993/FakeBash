@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import {createContainer} from 'meteor/react-meteor-data';
 import {Bins} from '../../../imports/collections/bins'
 import { Meteor } from 'meteor/meteor';
-import BinsEditor from './bins_editor';
+import BinsCommentEditor from './bins_comment_editor';
 import BinsViewer from './bins_viewer';
-import BinsShare from'./bins_share';
 
-class BinsMain extends Component {    
+
+
+class BinsComments extends Component {    
     render() {
 
         if ( !this.props.bin ) {return <div className="spinner-border" role="status">
@@ -15,14 +16,13 @@ class BinsMain extends Component {
         // console.log(this.props.params.binId);
         // console.log(this.props.bin);
         return(
-            <div className="bins-main-container">
+            <div className="bins-comments-container">
                 
-                <BinsEditor bin={this.props.bin}/>
-                {/* <BinsViewer bin={this.props.bin}/> */}
                 
-              
-                
-                {/* <BinsShare bin={this.props.bin} /> */}
+                <BinsViewer bin={this.props.bin}/>
+
+                <BinsCommentEditor bin={this.props.bin}/>
+            
             </div>
         );
     }
@@ -31,6 +31,7 @@ class BinsMain extends Component {
 export default createContainer((props) => {
     const {binId} = props.params;
     Meteor.subscribe('bins');
+    Meteor.subscribe('comments');
     Meteor.subscribe('sharedBins');
     return { bin: Bins.findOne(binId) };
-},BinsMain);
+},BinsComments);
