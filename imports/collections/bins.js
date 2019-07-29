@@ -31,6 +31,9 @@ Meteor.methods({
     'bins.comment': function (bin, comment) {
         return Bins.update(bin._id, { $push: { comments: comment} });
     },
+    'bins.remove_comment': function (bin, comment) {
+        return Bins.update(bin._id, { $pull: { comments: comment} });
+    },
     'bins.like': function (bin) {
         return Bins.update(bin._id, { $inc: {likes: 1} });
     },
