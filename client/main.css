@@ -1,0 +1,101 @@
+#login-buttons a{
+    text-decoration: none;
+    color: grey;
+}
+#login-buttons a:hover{
+    
+    color: black;
+}
+a:hover {
+    color: black;
+    text-decoration: none;
+}
+.cancel a {
+    color:black;
+}
+.save a {
+    color:white;
+}
+
+#login-buttons {
+    margin: 18px;
+    font-size: 14px;
+}
+
+.list-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2%;
+}
+
+.list-group-item {
+    /* height: 55px; */
+    width: 50%;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    margin-bottom: 3%;
+    padding:2%;
+    /* flex-direction: column; */
+    /* align-items: center; */
+}
+
+.description-container {
+    display: flex;
+    flex-direction: column;
+    /* width: 40%; */
+}
+
+.time-created {
+    width: 50%;
+    color: black;
+    font-weight: bold;
+    background-color: rgba(131, 120, 120, 0.4);
+    
+}
+
+.bins-main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-container {
+    width: 25%;
+    margin: 2% 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-container.list {
+    width: 100%;
+    justify-content: flex-start;
+    align-items:center;
+    margin-top: 10%;
+}
+
+.btn-container.list.sort {
+    margin-top: 1%;
+    width: 70%;
+}
+
+
+.btn-container.list .btn{
+    margin:0 2%;
+}
+.bins-share {
+    /* position: absolute;
+    bottom: 0; */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+
+.bins-share .input-group {
+    width: 40%;
+}
+
+.bins-share > div {
+    margin: 0 10px;
+}
