@@ -8,8 +8,11 @@ Meteor.methods({
             content: '',
             likes: 0,
             dislikes: 0,
+            rating: 0,
+            sortkey: '',
             sharedWith: [],
-            ownerId: this.userId
+            ownerId: this.userId,
+            comments: []
         });
     },
     'bins.remove': function(bin) {
@@ -27,15 +30,31 @@ Meteor.methods({
     'bins.share': function (bin, email) {
         return Bins.update(bin._id, { $push: { sharedWith: email} });
     },
+    'bins.comment': function (bin, comment) {
+        return Bins.update(bin._id, { $push: { comments: comment} });
+    },
+    'bins.remove_comment': function (bin, comment) {
+        return Bins.update(bin._id, { $pull: { comments: comment} });
+    },
     'bins.like': function (bin) {
         return Bins.update(bin._id, { $inc: {likes: 1} });
     },
     'bins.dislike': function (bin) {
         return Bins.update(bin._id, { $inc: {dislikes: 1} });
+    },
+    'bins.rating': function (bin,likes,dislikes) {
+        return Bins.update(bin._id, { $set: {rating: likes-dislikes} });
+    },
+    'bins.sortkey': function (bin,key) {
+        return Bins.update(bin._id, { $set: {sortkey: key} });
     }
+    
 
 });
 
 export const Bins = new Mongo.Collection('bins');
+
+
+
 
 

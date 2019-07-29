@@ -46,6 +46,9 @@ a:hover {
     /* width: 40%; */
 }
 
+.time-container {
+    margin-top: 5%;
+}
 .time-created {
     width: 50%;
     color: black;
@@ -72,6 +75,7 @@ a:hover {
     justify-content: flex-start;
     align-items:center;
     margin-top: 10%;
+    margin-bottom: 5%;
 }
 
 .btn-container.list.sort {
@@ -98,4 +102,17 @@ a:hover {
 
 .bins-share > div {
     margin: 0 10px;
+}
+
+
+.bins-comments-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.list-group-item.comment {
+    width: 100%;
+    border-color: darkgreen;
 }
